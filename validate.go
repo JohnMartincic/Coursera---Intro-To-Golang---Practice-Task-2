@@ -3,12 +3,13 @@ package main
 import (
 	"errors"
 	"fmt"
+	"strings"
 )
 
 func getCityFromCode(codeToLookup string) (City, error) {
 
 	for _, item := range cities {
-		if item.code == codeToLookup {
+		if item.code == strings.ToUpper(codeToLookup) {
 			return item, nil
 		}
 	}
@@ -20,7 +21,7 @@ func getCityFromCode(codeToLookup string) (City, error) {
 func getCabinClassFromCode(codeToLookup string) (CabinClass, error) {
 
 	for _, item := range cabinClasses {
-		if item.code == codeToLookup {
+		if item.code == strings.ToUpper(codeToLookup) {
 			return item, nil
 		}
 	}

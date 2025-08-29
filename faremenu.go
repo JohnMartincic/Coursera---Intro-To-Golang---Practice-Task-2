@@ -49,6 +49,10 @@ func main() {
 	var enteredCabinClassErr error
 
 	for !validCabinClassEntered {
+		for i := range cabinClasses {
+			fmt.Println(cabinClasses[i].code + "=" + cabinClasses[i].className)
+		}
+
 		fmt.Println("Enter cabin class code: ")
 		fmt.Scanln(&cabinClass)
 
